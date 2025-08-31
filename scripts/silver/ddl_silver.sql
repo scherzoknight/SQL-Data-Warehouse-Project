@@ -1,8 +1,13 @@
-
-
-
-
-
+/* 
+=============================================================
+DDL Script : Create Bronze Tables
+=============================================================
+Script Purpose :
+  thwsoi script creates table in the "silver" Schema, dropping exisitng tables
+  if they already exists. 
+    Run this Script to re-define the DDL structure of 'bronze' Tables
+===========================================================================
+*/
 
 if object_id ('silver.crm_cust_info', 'U') is not null 
 	drop table silver.crm_cust_info;
