@@ -19,7 +19,8 @@ create table silver.crm_cust_info(
 	cst_lastname nvarchar(50),
 	cst_material_status nvarchar(50),
 	cst_gndr nvarchar(50),
-	cst_create_date DATE
+	cst_create_date DATE,
+	dwh_create_date datetime2 default getdate()
 );
 go
 
@@ -27,13 +28,14 @@ if object_id ('silver.crm_prd_info', 'U') is not null
 	drop table silver.crm_prd_info;
 go
 create table silver.crm_prd_info(
-prd_id INT,
-prd_key NVARCHAR(50),
-prd_nm NVARCHAR(50),
-prd_cost int, 
-prd_line NVARCHAR(50),
-prd_start_date DATETIME,
-prd_end_date DATETIME
+	prd_id INT,
+	prd_key NVARCHAR(50),
+	prd_nm NVARCHAR(50),
+	prd_cost int, 
+	prd_line NVARCHAR(50),
+	prd_start_date DATETIME,
+	prd_end_date DATETIME,
+	dwh_create_date datetime2 default getdate()
 );
 go
 
@@ -49,7 +51,8 @@ create table silver.crm_sales_details(
 	sls_due_dt int,
 	sls_sales Int,
 	sls_quntity int,
-	sls_price int
+	sls_price int,
+	dwh_create_date datetime2 default getdate()
 );
 go
 
@@ -58,7 +61,8 @@ if object_id ('silver.erp_loc_a101', 'U') is not null
 go
 create table silver.erp_loc_a101(
 	cid NVARCHAR(50),
-	cntry NVARCHAR(50)
+	cntry NVARCHAR(50),
+	dwh_create_date datetime2 default getdate()
 );
 go
 
@@ -68,7 +72,8 @@ go
 create table silver.erp_cust_az12(
 	cid NVARCHAR(50),
 	bdate NVARCHAR(50),
-	gen NVARCHAR(50)
+	gen NVARCHAR(50),
+	dwh_create_date datetime2 default getdate()
 );
 go
 
@@ -79,7 +84,8 @@ create table silver.erp_px_cat_g1v2 (
 	id NVARCHAR(50), 
 	cat NVARCHAR(50),
 	subcat NVARCHAR(50),
-	maintenance NVARCHAR(50)
+	maintenance NVARCHAR(50),
+	dwh_create_date datetime2 default getdate()
 );
 go
 
